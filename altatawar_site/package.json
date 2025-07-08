@@ -1,0 +1,12 @@
+{
+  "name": "altatawar-website",
+  "version": "1.0.0",
+  "description": "التطور التكنولوجي - IT Services Website",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "keywords": ["react", "flask", "vercel", "arabic", "it-services"],
+  "author": "التطور التكنولوجي",
+  "license": "MIT"
+}
+
