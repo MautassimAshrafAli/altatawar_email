@@ -13,6 +13,6 @@
       "use": "@vercel/python"
     }
   ],
-  "routes": [{"src": "/api/(.*)", "dest": "send-email.py"}]
+  "routes": [{"src": "/api/(.*)", "dest": "/api/send-email.py"}]
 }
 
