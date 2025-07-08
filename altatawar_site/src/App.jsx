@@ -134,7 +134,7 @@ function App() {
       //}
     } catch (error) {
       console.error('Error sending email:', error)
-      setSubmitMessage('حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.')
+      setSubmitMessage(error)
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setSubmitMessage(''), 8000)
