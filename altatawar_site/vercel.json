@@ -7,12 +7,9 @@
       "config": {
         "distDir": "dist"
       }
-    },
-    {
-      "src": "api/send-email.py",
-      "use": "@vercel/python"
     }
   ],
-  "routes": [{"src": "/api/(.*)", "dest": "send-email.py"}]
+  "builds":[{"src": "/api/send-email.py", "use": "@vercel/python"}],
+  "routes": [{"src": "/api/(.*)", "dest": "/api/send-email.py"}]
 }
 
