@@ -129,13 +129,12 @@ function App() {
       if (response.ok && result.success) {
         setSubmitMessage(result.message || 'تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.')
         setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        setSubmitMessage(result.error || 'حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.')
       }
-//	  else {
-      //  setSubmitMessage(result.error || 'حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.')
-      //}
     } catch (error) {
       console.error('Error sending email:', error)
-      setSubmitMessage(error)
+      setSubmitMessage('حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.')
     } finally {
       setIsSubmitting(false)
       setTimeout(() => setSubmitMessage(''), 8000)
