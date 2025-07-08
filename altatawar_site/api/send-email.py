@@ -92,7 +92,7 @@ def handler(request):
         customer_msg = Message(
             subject="شكراً لتواصلكم معنا - التطور التكنولوجي",
             sender='altatawar@altatawar.com',
-            recipients=[email]
+            recipients=[email]  
         )
         
         # Customer email content (HTML)
@@ -149,7 +149,7 @@ def handler(request):
         logger.error(f"Email sending failed: {str(e)}")
         return jsonify({
             'success': False,
-            'message': 'حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى / Error sending email. Please try again.',
+            'message': str(e),
             'error': str(e)
         }), 500, {
             'Access-Control-Allow-Origin': '*',
