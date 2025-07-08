@@ -9,7 +9,7 @@
       }
     },
     {
-      "src": "api/send-email.py",
+      "src": "/api/send-email.py",
       "use": "@vercel/python"
     }
   ],
