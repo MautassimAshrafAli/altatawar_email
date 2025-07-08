@@ -10,12 +10,19 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 # Email configuration from environment variables
-app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.office365.com')
-app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
+#app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.office365.com')
+#app.config['MAIL_PORT'] = int(os.environ.get('MAIL_PORT', 587))
+#app.config['MAIL_USE_TLS'] = True
+#app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+#app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+#app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
+
+app.config['MAIL_SERVER'] = 'smtp.office365.com'
+app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
+app.config['MAIL_USERNAME'] = 'altatawar@altatawar.com'
+app.config['MAIL_PASSWORD'] = 'admin12345678ASHRAF@'
+app.config['MAIL_DEFAULT_SENDER'] = 'altatawar@altatawar.com'
 
 mail = Mail(app)
 
@@ -51,8 +58,8 @@ def handler(request):
         # Create company notification email
         company_msg = Message(
             subject=f"رسالة جديدة من الموقع: {subject}",
-            sender=app.config['MAIL_DEFAULT_SENDER'],
-            recipients=[app.config['MAIL_DEFAULT_SENDER']]
+            sender='altatawar@altatawar.com',
+            recipients=['altatawar@altatawar.com']
         )
         
         # Company email content (HTML)
@@ -84,7 +91,7 @@ def handler(request):
         # Create customer confirmation email
         customer_msg = Message(
             subject="شكراً لتواصلكم معنا - التطور التكنولوجي",
-            sender=app.config['MAIL_DEFAULT_SENDER'],
+            sender='altatawar@altatawar.com',
             recipients=[email]
         )
         
